@@ -111,8 +111,7 @@ Mini Project
 
 # 🎬 YouTube Playlist
 
-> **Python Data Visualization with Matplotlib**
-
+> [**Python Data Visualization with Matplotlib**](https://www.youtube.com/playlist?list=PLea-bfI_jPIA)
 Each GitHub chapter corresponds to one YouTube episode.
 
 ---
