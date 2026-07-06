@@ -1,4 +1,4 @@
-# Visualization with Matplotlib 📊
+# Visualization with Matplotlib
 
 Master data visualization using **Matplotlib**, one of the most popular plotting libraries in Python.
 
@@ -8,7 +8,7 @@ Throughout this course, you'll learn how to transform raw data into meaningful v
 
 ---
 
-# 🎯 Who is this course for?
+# Who is this course for?
 
 - Python Beginners
 - Data Analysts
@@ -21,7 +21,7 @@ Throughout this course, you'll learn how to transform raw data into meaningful v
 
 ---
 
-# 🧰 Technologies
+# Technologies
 
 - Python 3
 - Matplotlib
@@ -34,7 +34,7 @@ Throughout this course, you'll learn how to transform raw data into meaningful v
 
 ---
 
-# 📚 Course Roadmap
+# Course Roadmap
 
 | EP | Topic | GitHub |
 |:--:|-------|:------:|
@@ -56,7 +56,7 @@ Throughout this course, you'll learn how to transform raw data into meaningful v
 
 ---
 
-# 📂 Repository Structure
+# Repository Structure
 
 ```text
 visualization-with-matplotlib/
@@ -81,7 +81,7 @@ visualization-with-matplotlib/
 
 ---
 
-# 🚀 Learning Path
+# Learning Path
 
 This course follows a progressive learning path.
 
@@ -112,6 +112,7 @@ Mini Project
 # 🎬 YouTube Playlist
 
 > [**Python Data Visualization with Matplotlib**](https://www.youtube.com/playlist?list=PLea-bfI_jPIA)
+
 Each GitHub chapter corresponds to one YouTube episode.
 
 ---
