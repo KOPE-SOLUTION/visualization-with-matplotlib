@@ -14,12 +14,12 @@
 
 ## สิ่งที่ต้องมีก่อนเริ่ม
 
-Python 3, NumPy, Matplotlib, VS Code และ WSL Ubuntu (แนะนำ)
+Python 3, NumPy, Matplotlib และโปรแกรมเขียนโค้ดหรือ Notebook ที่คุณถนัด
 
 ## การติดตั้ง
 
 ~~~bash
-python3 -m pip install matplotlib numpy
+python -m pip install matplotlib numpy
 ~~~
 
 ## ตัวอย่างที่ 1 — กราฟเส้นแรก
