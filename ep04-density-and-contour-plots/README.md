@@ -173,144 +173,107 @@ sensor_values += rng.normal(0, 0.15, len(sensor_positions))
 
 ## 5. สร้างกราฟเส้นชั้นค่าด้วย `contour()`
 
-เราจะสร้างกราฟทีละส่วน เพื่อให้เห็นหน้าที่ของแต่ละคำสั่ง
+Jupyter แบบ inline จะปิด Figure เมื่อจบเซลล์ ดังนั้นคำสั่งของกราฟหนึ่งรูปต้องเริ่มด้วย `plt.subplots()` และจบด้วย `plt.show()` ภายในเซลล์เดียวกัน
 
-### เซลล์ที่ 9 — สร้าง Figure และ Axes
+ก่อนสร้างกราฟ เราจะเขียนฟังก์ชันช่วยสำหรับตั้งค่าแกน ฟังก์ชันนี้ยังไม่สร้าง Figure จึงแยกเป็นเซลล์ได้
+
+### เซลล์ที่ 9 — ฟังก์ชันจัดรูปแบบแผนผัง
+
+~~~python
+def format_room_axes(ax, title):
+    ax.set(
+        title=title,
+        xlabel="Room width (m)",
+        ylabel="Room height (m)",
+        xlim=(0, 10),
+        ylim=(0, 8),
+        aspect="equal",
+    )
+~~~
+
+ฟังก์ชันนี้ช่วยลดโค้ดซ้ำ โดยรับ Axes และชื่อกราฟ จากนั้นกำหนดชื่อแกน ขอบเขต และสัดส่วนของห้อง
+
+### เซลล์ที่ 10 — สร้างกราฟ Contour ให้เสร็จในเซลล์เดียว
 
 ~~~python
 fig, ax = plt.subplots(figsize=(8, 6))
-~~~
 
-- `fig` คือพื้นที่ภาพทั้งหมด
-- `ax` คือพื้นที่สำหรับวาดกราฟ
-- `figsize` กำหนดขนาดภาพเป็นนิ้ว
-
-### เซลล์ที่ 10 — วาดเส้นอุณหภูมิ
-
-~~~python
 levels = np.arange(22, 34, 1)
-
 lines = ax.contour(
-    X,
-    Y,
-    temperature,
+    X, Y, temperature,
     levels=levels,
     colors="black",
     linewidths=0.8,
 )
-~~~
-
-`levels` กำหนดเส้นตั้งแต่ 22 ถึง 33 °C โดยห่างกันเส้นละ 1 °C เส้นหนึ่งเส้นจึงเชื่อมตำแหน่งที่มีอุณหภูมิเท่ากัน
-
-### เซลล์ที่ 11 — ใส่ค่าบนเส้น
-
-~~~python
 ax.clabel(lines, inline=True, fontsize=8, fmt="%.0f °C")
-~~~
 
-`clabel()` ใส่ตัวเลขลงบนเส้นโดยตรง ส่วน `fmt` กำหนดรูปแบบให้ไม่มีทศนิยมและต่อท้ายด้วยหน่วย °C
-
-### เซลล์ที่ 12 — วางตำแหน่งเซนเซอร์
-
-~~~python
 ax.scatter(
-    sensor_x,
-    sensor_y,
+    sensor_x, sensor_y,
     color="white",
     edgecolor="black",
     s=55,
     label="Temperature sensors",
 )
-~~~
 
-`scatter()` วางจุดตามตำแหน่งติดตั้งจริง สีขาวช่วยให้จุดมองเห็นได้บนเส้นสีดำ
-
-### เซลล์ที่ 13 — ปรับกราฟและแสดงผล
-
-~~~python
-ax.set(
-    title="Temperature contour in a machine room",
-    xlabel="Room width (m)",
-    ylabel="Room height (m)",
-    xlim=(0, 10),
-    ylim=(0, 8),
-    aspect="equal",
-)
+format_room_axes(ax, "Temperature contour in a machine room")
 ax.legend()
 plt.show()
 ~~~
 
-`aspect="equal"` ทำให้หนึ่งเมตรบนแกน x และ y มีขนาดเท่ากัน แผนผังห้องจึงไม่ถูกยืดผิดสัดส่วน
+ลำดับการทำงานภายในเซลล์:
 
-หลังรันเซลล์นี้ คุณควรเห็นเส้นอุณหภูมิหนาแน่นรอบเครื่องจักรและบริเวณอากาศเย็นใกล้เครื่องปรับอากาศ
+1. `plt.subplots()` สร้าง Figure และ Axes
+2. `ax.contour()` วาดเส้นอุณหภูมิห่างกันระดับละ 1 °C
+3. `ax.clabel()` ใส่ค่าอุณหภูมิบนเส้น
+4. `ax.scatter()` วางตำแหน่ง sensor node
+5. `format_room_axes()` จัดรูปแบบแผนผัง
+6. `plt.show()` แสดงกราฟหลังประกอบเสร็จแล้ว
 
+> อย่าแยกบรรทัด `fig, ax = plt.subplots(...)` ออกจากเซลล์นี้ มิฉะนั้น Notebook อาจแสดง Figure ว่างก่อนที่คำสั่งวาดกราฟจะทำงาน
 ---
 
 ## 6. สร้างแผนที่สีด้วย `contourf()`
 
-กราฟต่อไปเป็น Figure ใหม่ จึงไม่ทับกราฟก่อนหน้า
+กราฟนี้เป็น Figure รูปใหม่ จึงรวมคำสั่งทั้งหมดไว้ในอีกหนึ่งเซลล์
 
-### เซลล์ที่ 14 — กำหนดระดับสี
+### เซลล์ที่ 11 — Filled Contour พร้อม Colorbar
 
 ~~~python
-color_levels = np.arange(22, 34.5, 0.5)
 fig, ax = plt.subplots(figsize=(8, 6))
-~~~
 
-ช่วงสีห่างกัน 0.5 °C ทำให้การเปลี่ยนแปลงดูละเอียดกว่าเส้น contour ก่อนหน้า
-
-### เซลล์ที่ 15 — ระบายสีระหว่างระดับ
-
-~~~python
+color_levels = np.arange(22, 34.5, 0.5)
 filled = ax.contourf(
-    X,
-    Y,
-    temperature,
+    X, Y, temperature,
     levels=color_levels,
     cmap="coolwarm",
     extend="both",
 )
-~~~
 
-- `contourf()` ระบายสีพื้นที่ระหว่างระดับ
-- `coolwarm` ใช้สีน้ำเงินกับบริเวณเย็นและสีแดงกับบริเวณร้อน
-- `extend="both"` แสดงว่ามีค่าเกินช่วงสีที่กำหนดหรือไม่
-
-### เซลล์ที่ 16 — เพิ่ม Colorbar
-
-~~~python
-colorbar = fig.colorbar(filled, ax=ax)
-colorbar.set_label("Temperature (°C)")
-~~~
-
-colorbar ทำหน้าที่เหมือน legend ของสี จึงต้องใส่ชื่อตัวแปรและหน่วยเสมอ
-
-### เซลล์ที่ 17 — เพิ่มเซนเซอร์และแสดงผล
-
-~~~python
-ax.scatter(sensor_x, sensor_y, color="black", marker="x", label="Sensors")
-
-ax.set(
-    title="Machine-room temperature map",
-    xlabel="Room width (m)",
-    ylabel="Room height (m)",
-    xlim=(0, 10),
-    ylim=(0, 8),
-    aspect="equal",
+fig.colorbar(filled, ax=ax, label="Temperature (°C)")
+ax.scatter(
+    sensor_x, sensor_y,
+    color="black",
+    marker="x",
+    label="Sensors",
 )
+
+format_room_axes(ax, "Machine-room temperature map")
 ax.legend()
 plt.show()
 ~~~
 
-เครื่องหมายกากบาทแสดงตำแหน่งที่มีการวัดจริง ส่วนสีระหว่างจุดเป็นค่าจากแบบจำลองหรือ interpolation
-
+- `color_levels` กำหนดช่วงสีห่างกัน 0.5 °C
+- `contourf()` ระบายสีพื้นที่ระหว่างระดับ
+- `coolwarm` ใช้สีน้ำเงินแทนบริเวณเย็นและสีแดงแทนบริเวณร้อน
+- `extend="both"` ทำให้ colorbar แจ้งเมื่อค่าหลุดจากช่วงที่กำหนด
+- colorbar ต้องมีชื่อและหน่วยเพื่อให้ผู้อ่านตีความสีได้ถูกต้อง
 ---
 
 ## 7. แสดงข้อมูลด้วย `imshow()`
 
 `imshow()` เหมาะกับข้อมูลที่อยู่บนกริดสม่ำเสมอ เช่น thermal camera หรือเซนเซอร์ที่ติดตั้งเป็นแถวและคอลัมน์
 
-### เซลล์ที่ 18 — สร้างภาพจากเมทริกซ์
+### เซลล์ที่ 12 — แสดงเมทริกซ์อุณหภูมิเป็นภาพ
 
 ~~~python
 fig, ax = plt.subplots(figsize=(8, 6))
@@ -324,35 +287,24 @@ image = ax.imshow(
     vmax=34,
     aspect="equal",
 )
+
+fig.colorbar(image, ax=ax, label="Temperature (°C)")
+format_room_axes(ax, "Temperature field shown as an image")
+plt.show()
 ~~~
 
 - `extent` จับขอบภาพให้ตรงกับขนาดห้องจริง
 - `origin="lower"` กำหนดจุด (0, 0) ให้อยู่มุมซ้ายล่าง
 - `vmin` และ `vmax` ล็อกช่วงสีไว้ที่ 22–34 °C
 - การล็อกช่วงสีสำคัญเมื่อเปรียบเทียบข้อมูลต่างเวลา เพราะสีเดียวกันจะหมายถึงค่าเดียวกันเสมอ
-
-### เซลล์ที่ 19 — เพิ่มคำอธิบายและแสดงผล
-
-~~~python
-fig.colorbar(image, ax=ax, label="Temperature (°C)")
-
-ax.set(
-    title="Temperature field shown as an image",
-    xlabel="Room width (m)",
-    ylabel="Room height (m)",
-)
-plt.show()
-~~~
-
-หากไม่กำหนด `extent` แกนจะแสดงหมายเลขแถวและคอลัมน์ของเมทริกซ์แทนตำแหน่งจริง
-
+- หากไม่กำหนด `extent` แกนจะแสดงหมายเลขแถวและคอลัมน์ของเมทริกซ์แทนตำแหน่งจริง
 ---
 
 ## 8. รวมภาพสี เส้นระดับ และค่าจากเซนเซอร์
 
-ส่วนนี้ใช้ตัวแปรที่สร้างไว้แล้วจากเซลล์ก่อนหน้า
+กราฟสุดท้ายรวมภาพรวมของอุณหภูมิ ระดับสำคัญ ตำแหน่งอุปกรณ์ และค่าที่วัดได้ไว้ด้วยกัน
 
-### เซลล์ที่ 20 — สร้างภาพพื้นหลัง
+### เซลล์ที่ 13 — สร้าง IoT Temperature Dashboard
 
 ~~~python
 fig, ax = plt.subplots(figsize=(9, 6))
@@ -366,41 +318,22 @@ image = ax.imshow(
     vmax=34,
     aspect="equal",
 )
-~~~
-
-### เซลล์ที่ 21 — ซ้อนเส้นระดับสำคัญ
-
-~~~python
-important_levels = [24, 26, 28, 30, 32]
 
 lines = ax.contour(
-    X,
-    Y,
-    temperature,
-    levels=important_levels,
+    X, Y, temperature,
+    levels=[24, 26, 28, 30, 32],
     colors="black",
     linewidths=0.8,
 )
 ax.clabel(lines, inline=True, fontsize=8, fmt="%.0f °C")
-~~~
 
-เราเลือกเฉพาะระดับสำคัญเพื่อไม่ให้กราฟรก ในระบบจริงอาจกำหนดระดับจาก threshold เช่น warning และ critical
-
-### เซลล์ที่ 22 — วาง sensor node
-
-~~~python
 ax.scatter(
-    sensor_x,
-    sensor_y,
+    sensor_x, sensor_y,
     color="white",
     edgecolor="black",
     s=65,
 )
-~~~
 
-### เซลล์ที่ 23 — ใส่รหัสและค่าที่วัดได้
-
-~~~python
 for index, ((x_pos, y_pos), value) in enumerate(
     zip(sensor_positions, sensor_values),
     start=1,
@@ -412,34 +345,21 @@ for index, ((x_pos, y_pos), value) in enumerate(
         textcoords="offset points",
         fontsize=7,
     )
-~~~
 
-- `zip()` จับคู่ตำแหน่งกับค่าของอุปกรณ์
-- `enumerate(..., start=1)` สร้างรหัส T1, T2, T3 ตามลำดับ
-- `xytext=(5, 5)` ขยับข้อความออกจากจุดเล็กน้อย
-- `:.1f` แสดงค่าทศนิยมหนึ่งตำแหน่ง
-
-### เซลล์ที่ 24 — ปิดงานกราฟ
-
-~~~python
 fig.colorbar(image, ax=ax, label="Temperature (°C)")
-
-ax.set(
-    title="IoT temperature monitoring",
-    xlabel="Room width (m)",
-    ylabel="Room height (m)",
-    xlim=(0, 10),
-    ylim=(0, 8),
-)
+format_room_axes(ax, "IoT temperature monitoring")
 plt.show()
 ~~~
 
-กราฟสุดท้ายแสดงสามสิ่งพร้อมกัน:
+กราฟนี้ประกอบด้วย:
 
-1. สีแสดงภาพรวมของอุณหภูมิ
-2. เส้น contour แสดงขอบเขตของระดับสำคัญ
-3. จุดและข้อความแสดงตำแหน่งกับค่าจากอุปกรณ์
+1. `imshow()` แสดงภาพรวมของอุณหภูมิ
+2. `contour()` แสดงขอบเขตระดับสำคัญ
+3. `scatter()` แสดงตำแหน่งที่มีการวัดจริง
+4. `annotate()` แสดงรหัสและค่าของ sensor node
+5. colorbar อธิบายความสัมพันธ์ระหว่างสีกับอุณหภูมิ
 
+`zip()` จับคู่ตำแหน่งกับค่าของอุปกรณ์ ส่วน `enumerate(..., start=1)` ใช้สร้างรหัส T1, T2 และ T3 ตามลำดับ
 ---
 
 ## 9. เมื่อนำข้อมูลเซนเซอร์จริงมาใช้
