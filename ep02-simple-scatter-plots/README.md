@@ -1,4 +1,4 @@
-# EP2 — การสร้างกราฟกระจายด้วย Matplotlib
+# EP2 — Simple Scatter Plots
 
 ยินดีต้อนรับสู่ตอนที่ 2 ของชุดบทเรียน **การสร้างภาพข้อมูลด้วย Python และ Matplotlib**
 
@@ -65,4 +65,4 @@ plt.colorbar()
 
 ## ตอนถัดไป
 
-**EP3 — การแสดงค่าความคลาดเคลื่อน**
+**EP3 — Visualizing Errors**

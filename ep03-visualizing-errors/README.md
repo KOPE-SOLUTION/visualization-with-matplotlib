@@ -1,4 +1,4 @@
-# EP3 — การแสดงค่าความคลาดเคลื่อนด้วย Matplotlib
+# EP3 — Visualizing Errors with Matplotlib
 
 ยินดีต้อนรับสู่ตอนที่ 3 ของชุดบทเรียน **การสร้างภาพข้อมูลด้วย Python และ Matplotlib**
 
@@ -61,4 +61,4 @@ plt.fill_between(x, y - err, y + err, alpha=0.2)
 
 ## ตอนถัดไป
 
-**EP4 — กราฟความหนาแน่นและกราฟเส้นชั้นความสูง**
+**EP4 — Density and Contour Plots for IoT Sensor Data**

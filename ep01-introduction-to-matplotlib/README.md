@@ -1,4 +1,4 @@
-# EP1 — รู้จัก Matplotlib
+# EP1 — Introduction to Matplotlib
 
 ยินดีต้อนรับสู่ตอนแรกของชุดบทเรียน **การสร้างภาพข้อมูลด้วย Python และ Matplotlib**
 
@@ -79,4 +79,4 @@ ax.set_title("กราฟอย่างง่าย")
 
 ## ตอนถัดไป
 
-**EP2 — การสร้างกราฟกระจายด้วย Matplotlib**
+**EP2 — Simple Scatter Plots**
