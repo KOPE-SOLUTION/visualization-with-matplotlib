@@ -2,29 +2,65 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-def make_field(x, y):
-    hill = np.exp(-((x + 1.0) ** 2 + (y - 0.8) ** 2))
-    valley = 0.8 * np.exp(-((x - 1.2) ** 2 + (y + 0.7) ** 2) / 0.7)
-    ripple = 0.15 * np.sin(2 * x) * np.cos(2 * y)
-    return hill - valley + ripple
+def make_temperature_field(x, y):
+    room_temperature = 26.0
+    machine_heat = 6.0 * np.exp(
+        -(((x - 7.5) ** 2) / 2.0 + ((y - 2.0) ** 2) / 1.5)
+    )
+    air_conditioner = 4.0 * np.exp(
+        -(((x - 1.0) ** 2) / 3.0 + ((y - 6.5) ** 2) / 2.0)
+    )
+    airflow = 0.4 * np.sin(np.pi * x / 5) * np.cos(np.pi * y / 4)
+    return room_temperature + machine_heat - air_conditioner + airflow
 
 
-x = np.linspace(-3, 3, 160)
-y = np.linspace(-3, 3, 140)
+x = np.linspace(0, 10, 200)
+y = np.linspace(0, 8, 160)
 X, Y = np.meshgrid(x, y)
-Z = make_field(X, Y)
+temperature = make_temperature_field(X, Y)
 
-limit = np.max(np.abs(Z))
-levels = np.linspace(-limit, limit, 17)
+sensor_positions = np.array([
+    [1.0, 1.0],
+    [3.0, 2.0],
+    [5.0, 1.0],
+    [8.0, 1.0],
+    [2.0, 4.0],
+    [5.0, 4.0],
+    [8.0, 4.0],
+    [1.0, 7.0],
+    [4.0, 7.0],
+    [7.0, 7.0],
+    [9.0, 7.0],
+])
 
-fig, ax = plt.subplots(figsize=(7, 6))
-filled_contour = ax.contourf(X, Y, Z, levels=levels, cmap="coolwarm")
-fig.colorbar(filled_contour, ax=ax, label="Field value")
+levels = np.arange(22, 34.5, 0.5)
+
+fig, ax = plt.subplots(figsize=(8, 6))
+filled_contour = ax.contourf(
+    X,
+    Y,
+    temperature,
+    levels=levels,
+    cmap="coolwarm",
+    extend="both",
+)
+fig.colorbar(filled_contour, ax=ax, label="Temperature (°C)")
+
+ax.scatter(
+    sensor_positions[:, 0],
+    sensor_positions[:, 1],
+    color="black",
+    marker="x",
+    label="Sensors",
+)
 
 ax.set(
-    title="Filled contour",
-    xlabel="x position",
-    ylabel="y position",
+    title="Machine-room temperature map",
+    xlabel="Room width (m)",
+    ylabel="Room height (m)",
+    xlim=(0, 10),
+    ylim=(0, 8),
     aspect="equal",
 )
+ax.legend()
 plt.show()
