@@ -1,99 +1,68 @@
-# EP2 — Creating Scatter Plots with Matplotlib
+# EP2 — การสร้างกราฟกระจายด้วย Matplotlib
 
-Welcome to Episode 2 of the **Python Data Visualization with Matplotlib** series.
+ยินดีต้อนรับสู่ตอนที่ 2 ของชุดบทเรียน **การสร้างภาพข้อมูลด้วย Python และ Matplotlib**
 
-## Learning Objectives
+## วัตถุประสงค์การเรียนรู้
 
-- Understand what a scatter plot is
-- Create scatter plots with `plot()` and `scatter()`
-- Customize marker style, size, and color
-- Use transparency (`alpha`)
-- Apply colormaps
-- Know when to use `plot()` or `scatter()`
+- เข้าใจกราฟกระจาย (scatter plot)
+- สร้างกราฟด้วย `plot()` และ `scatter()`
+- ปรับรูปแบบ ขนาด สี และความโปร่งใส (`alpha`) ของจุด
+- ใช้แผนผังสี (colormap)
+- เลือกใช้ `plot()` หรือ `scatter()` ให้เหมาะสม
 
-## Example 1
+## ตัวอย่างที่ 1
 
-```python
+~~~python
 import numpy as np
 import matplotlib.pyplot as plt
 
-x=np.linspace(0,10,30)
-y=np.sin(x)
+x = np.linspace(0, 10, 30)
+y = np.sin(x)
 
-plt.scatter(x,y)
+plt.scatter(x, y)
 plt.show()
-```
+~~~
 
-A scatter plot represents every observation as an individual point.
+กราฟกระจายแสดงแต่ละค่าสังเกตเป็นจุดข้อมูลแยกกัน
 
-## Example 2
+## การปรับแต่งจุด
 
-```python
-plt.scatter(
-    x,
-    y,
-    marker="o",
-    color="royalblue",
-    s=80
-)
-```
+~~~python
+plt.scatter(x, y, marker="o", color="royalblue", s=80, alpha=0.5)
+~~~
 
-Customize:
-- marker
-- color
-- size
+- `marker` — รูปแบบจุด
+- `color` — สี
+- `s` — ขนาดจุด
+- `alpha` — ความโปร่งใส ช่วยให้เห็นจุดที่ซ้อนทับกัน
 
-## Example 3
+## การแสดงข้อมูลหลายมิติ
 
-```python
-plt.scatter(
-    x,
-    y,
-    alpha=0.5
-)
-```
+~~~python
+rng = np.random.default_rng(0)
+x = rng.normal(size=100)
+y = rng.normal(size=100)
+sizes = rng.uniform(20, 200, 100)
+colors = rng.random(100)
 
-Transparency helps visualize overlapping points.
-
-## Example 4
-
-```python
-rng=np.random.default_rng(0)
-
-x=rng.normal(size=100)
-y=rng.normal(size=100)
-sizes=rng.uniform(20,200,100)
-colors=rng.random(100)
-
-plt.scatter(
-    x,
-    y,
-    s=sizes,
-    c=colors,
-    cmap="viridis",
-    alpha=0.7
-)
+plt.scatter(x, y, s=sizes, c=colors, cmap="viridis", alpha=0.7)
 plt.colorbar()
-```
+~~~
 
-## plot() vs scatter()
+## `plot()` กับ `scatter()`
 
-Use `plot()` for connected lines and very large datasets with identical markers.
+ใช้ `plot()` เมื่อต้องการเชื่อมจุดด้วยเส้น หรือมีข้อมูลจำนวนมากและทุกจุดใช้รูปแบบเดียวกัน ใช้ `scatter()` เมื่อต้องการให้ขนาดหรือสีของจุดแสดงข้อมูลเพิ่มเติม
 
-Use `scatter()` when marker size or color should represent additional information.
+## แบบฝึกหัด
 
-## Exercises
+1. วาดกราฟ y = x² ด้วยกราฟกระจาย
+2. เปลี่ยนรูปแบบ สี และขนาดของจุด
+3. เพิ่มชื่อกราฟและชื่อแกน
 
-1. Plot y=x² using scatter.
-2. Change marker styles.
-3. Change point colors.
-4. Add a title.
-5. Add axis labels.
+## โจทย์ท้าทายย่อย
 
-## Mini Challenge
+ใช้ข้อมูลสุ่มสร้างกราฟกระจายที่ปรับแต่งจนพร้อมใช้ในการนำเสนอ
 
-Create a presentation-ready scatter chart using random data.
+## ตอนถัดไป
 
-## Next Episode
-
-EP3 — Visualizing Error Bars
+**EP3 — การแสดงค่าความคลาดเคลื่อน**

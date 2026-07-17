@@ -1,114 +1,82 @@
-# EP1 — Introduction to Matplotlib
+# EP1 — รู้จัก Matplotlib
 
-Welcome to the first episode of the **Python Data Visualization with Matplotlib** series.
+ยินดีต้อนรับสู่ตอนแรกของชุดบทเรียน **การสร้างภาพข้อมูลด้วย Python และ Matplotlib**
 
-## Objectives
+## วัตถุประสงค์การเรียนรู้
 
-After completing this episode, you will be able to:
-- Explain the role of Matplotlib in Python
-- Create and manage Figure and Axes objects
-- Build your first Line Plot
-- Display multiple data series in a single chart
-- Customize colors and line styles
-- Configure axis ranges
-- Add titles, axis labels, and legends
-- Understand the Figure–Axes architecture
+เมื่อเรียนจบตอนนี้ คุณจะสามารถ:
+- อธิบายบทบาทของ Matplotlib ใน Python
+- สร้างและจัดการออบเจ็กต์ Figure และ Axes
+- สร้างกราฟเส้นและแสดงข้อมูลหลายชุดในกราฟเดียว
+- ปรับแต่งสี รูปแบบเส้น และช่วงของแกน
+- เพิ่มชื่อกราฟ ชื่อแกน และคำอธิบายกราฟ
+- เข้าใจสถาปัตยกรรม Figure–Axes
 
-## Prerequisites
+## สิ่งที่ต้องมีก่อนเริ่ม
 
-- Python 3
-- NumPy
-- Matplotlib
-- VS Code
-- WSL Ubuntu (recommended)
+Python 3, NumPy, Matplotlib, VS Code และ WSL Ubuntu (แนะนำ)
 
-## Install
+## การติดตั้ง
 
-```bash
+~~~bash
 python3 -m pip install matplotlib numpy
-```
+~~~
 
-## Example 1 — First Line Plot
+## ตัวอย่างที่ 1 — กราฟเส้นแรก
 
-```python
+~~~python
 import numpy as np
 import matplotlib.pyplot as plt
 
-x = np.linspace(0,10,500)
+x = np.linspace(0, 10, 500)
 y = np.sin(x)
 
 fig, ax = plt.subplots()
-ax.plot(x,y)
-ax.set_title("Sine Wave")
+ax.plot(x, y)
+ax.set_title("คลื่นไซน์")
 plt.show()
-```
+~~~
 
-## Figure vs Axes
+## Figure กับ Axes ต่างกันอย่างไร
 
-- **Figure**: the overall canvas.
-- **Axes**: the plotting area where charts are drawn.
+- **Figure** คือพื้นที่ทั้งหมดของภาพ
+- **Axes** คือพื้นที่ภายใน Figure ที่ใช้วาดกราฟ
 
-A single figure may contain one or many axes.
+Figure หนึ่งภาพสามารถมี Axes ได้หนึ่งหรือหลายชุด
 
-## Multiple Lines
+## การแสดงเส้นหลายเส้น
 
-```python
-ax.plot(x,np.sin(x),label="sin(x)")
-ax.plot(x,np.cos(x),label="cos(x)")
+~~~python
+ax.plot(x, np.sin(x), label="sin(x)")
+ax.plot(x, np.cos(x), label="cos(x)")
 ax.legend()
-```
+~~~
 
-## Styling
+## การปรับแต่งรูปแบบ
 
-Try changing:
-- color
-- linestyle
-- linewidth
-- marker
+ลองปรับ `color` (สี), `linestyle` (รูปแบบเส้น), `linewidth` (ความหนา) และ `marker` (สัญลักษณ์จุด)
 
-Example:
-```python
-ax.plot(x,np.sin(x),color="royalblue",linestyle="--",linewidth=2)
-```
-
-## Axis Configuration
-
-```python
-ax.set_xlim(0,10)
-ax.set_ylim(-1.2,1.2)
-```
-
-## Labels
-
-```python
+~~~python
+ax.plot(x, np.sin(x), color="royalblue", linestyle="--", linewidth=2)
+ax.set_xlim(0, 10)
+ax.set_ylim(-1.2, 1.2)
 ax.set_xlabel("x")
 ax.set_ylabel("y")
-ax.set_title("Simple Plot")
-```
+ax.set_title("กราฟอย่างง่าย")
+~~~
 
-## Exercises
+## แบบฝึกหัด
 
-1. Plot y=x².
-2. Plot sin(x) and cos(x) together.
-3. Change colors and line styles.
-4. Add labels and legends.
-5. Export the chart as PNG.
+1. วาดกราฟ y = x²
+2. วาดกราฟ sin(x) และ cos(x) ในภาพเดียวกัน
+3. เปลี่ยนสีและรูปแบบเส้น
+4. เพิ่มชื่อกำกับและคำอธิบายกราฟ
+5. ส่งออกกราฟเป็นไฟล์ PNG
 
-## Challenge
+## โจทย์ท้าทาย
 
-Create a chart with three mathematical functions and make it presentation-ready.
+สร้างกราฟที่มีฟังก์ชันทางคณิตศาสตร์สามฟังก์ชัน และปรับแต่งให้พร้อมใช้ในการนำเสนอ
 
-## Folder Structure
+## ตอนถัดไป
 
-```text
-ep01-introduction-to-matplotlib/
-├── README.md
-├── source-code/
-│   ├── first_plot.py
-│   ├── multiple_lines.py
-│   └── styling.py
-```
-
-## Next Episode
-
-**EP2 — Creating Scatter Plots**
+**EP2 — การสร้างกราฟกระจายด้วย Matplotlib**

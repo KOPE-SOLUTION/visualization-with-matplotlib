@@ -1,82 +1,64 @@
-# EP3 — Visualizing Errors with Matplotlib
+# EP3 — การแสดงค่าความคลาดเคลื่อนด้วย Matplotlib
 
-Welcome to Episode 3 of the Python Data Visualization with Matplotlib series.
+ยินดีต้อนรับสู่ตอนที่ 3 ของชุดบทเรียน **การสร้างภาพข้อมูลด้วย Python และ Matplotlib**
 
-## Learning Objectives
+## วัตถุประสงค์การเรียนรู้
 
-- Understand why uncertainty matters
-- Create error bars with `plt.errorbar()`
-- Customize error bars
-- Create confidence bands using `fill_between()`
-- Learn best practices for presenting measurement uncertainty
+- เข้าใจความสำคัญของความไม่แน่นอน
+- สร้างและปรับแต่งแถบค่าคลาดเคลื่อน (error bar) ด้วย `plt.errorbar()`
+- สร้างแถบช่วงความเชื่อมั่นด้วย `fill_between()`
+- นำเสนอความไม่แน่นอนของการวัดอย่างเหมาะสม
 
-## Example 1 — Basic Error Bars
+## ตัวอย่างที่ 1 — แถบค่าคลาดเคลื่อนพื้นฐาน
 
-```python
+~~~python
 import numpy as np
 import matplotlib.pyplot as plt
 
-x=np.linspace(0,10,20)
-y=np.sin(x)
-err=0.2
+x = np.linspace(0, 10, 20)
+y = np.sin(x)
+err = 0.2
 
-plt.errorbar(x,y,yerr=err,fmt='o',capsize=4)
+plt.errorbar(x, y, yerr=err, fmt="o", capsize=4)
 plt.show()
-```
+~~~
 
-## Example 2 — Styled Error Bars
+## ตัวอย่างที่ 2 — การปรับแต่งแถบค่าคลาดเคลื่อน
 
-```python
+~~~python
 plt.errorbar(
-    x,
-    y,
-    yerr=err,
-    fmt='o',
-    color='royalblue',
-    ecolor='gray',
-    elinewidth=2,
-    capsize=6
+    x, y, yerr=err, fmt="o",
+    color="royalblue", ecolor="gray",
+    elinewidth=2, capsize=6
 )
-```
+~~~
 
-## Example 3 — Confidence Band
+## ตัวอย่างที่ 3 — แถบช่วงความเชื่อมั่น
 
-```python
-plt.plot(x,y)
-plt.fill_between(
-    x,
-    y-err,
-    y+err,
-    alpha=0.2
-)
-```
+~~~python
+plt.plot(x, y)
+plt.fill_between(x, y - err, y + err, alpha=0.2)
+~~~
 
-`fill_between()` shades the uncertainty region around a curve.
+`fill_between()` ใช้ระบายสีบริเวณความไม่แน่นอนรอบเส้นกราฟ
 
-## Best Practices
+## แนวทางที่แนะนำ
 
-- Label your axes.
-- Explain what the error represents.
-- Keep colors subtle.
-- Avoid clutter.
+- ใส่ชื่อกำกับแกน
+- อธิบายว่าค่าคลาดเคลื่อนหมายถึงอะไร
+- ใช้สีที่ไม่ฉูดฉาดเกินไป
+- หลีกเลี่ยงองค์ประกอบที่ทำให้กราฟดูรก
 
-## Exercises
+## แบบฝึกหัด
 
-1. Create vertical error bars.
-2. Add horizontal error bars.
-3. Customize colors.
-4. Replace error bars with a confidence band.
+1. สร้างแถบค่าคลาดเคลื่อนในแนวตั้งและแนวนอน
+2. ปรับแต่งสี
+3. เปลี่ยนจากแถบค่าคลาดเคลื่อนเป็นแถบช่วงความเชื่อมั่น
 
-## Mini Challenge
+## โจทย์ท้าทายย่อย
 
-Create a presentation-ready chart that includes:
+สร้างกราฟที่พร้อมใช้ในการนำเสนอ โดยมีข้อมูล แถบค่าคลาดเคลื่อน ชื่อกราฟ ชื่อแกน และเส้นตาราง
 
-- Data
-- Error bars
-- Title
-- Axis labels
-- Grid
+## ตอนถัดไป
 
-## Next Episode
-
-EP4 — Density and Contour Plots
+**EP4 — กราฟความหนาแน่นและกราฟเส้นชั้นความสูง**

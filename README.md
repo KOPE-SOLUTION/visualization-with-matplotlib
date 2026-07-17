@@ -1,138 +1,78 @@
-# Visualization with Matplotlib
+# การสร้างภาพข้อมูลด้วย Matplotlib
 
-Master data visualization using **Matplotlib**, one of the most popular plotting libraries in Python.
+เรียนรู้การสร้างภาพข้อมูลด้วย **Matplotlib** หนึ่งในไลบรารีสร้างกราฟที่ได้รับความนิยมมากที่สุดใน Python
 
-This repository accompanies a complete YouTube learning series designed for beginners, engineers, data analysts, and data science enthusiasts.
+Repository นี้ใช้ประกอบชุดวิดีโอบน YouTube สำหรับผู้เริ่มต้น วิศวกร นักวิเคราะห์ข้อมูล และผู้ที่สนใจด้านวิทยาการข้อมูล คุณจะได้เรียนรู้วิธีเปลี่ยนข้อมูลดิบให้เป็นภาพข้อมูลที่สื่อความหมาย ผ่านตัวอย่างที่นำไปใช้ได้จริงและขั้นตอนการทำงานด้วย Python บน **WSL Ubuntu**
 
-Throughout this course, you'll learn how to transform raw data into meaningful visualizations using practical examples and modern Python workflows on **WSL Ubuntu**.
+## หลักสูตรนี้เหมาะกับใคร
 
----
+- ผู้เริ่มต้นเขียน Python
+- นักวิเคราะห์ข้อมูลและวิศวกรข้อมูล
+- ผู้เริ่มต้นด้าน Machine Learning
+- นักพัฒนา IoT และวิศวกรระบบสมองกลฝังตัว
+- นักเรียน นักศึกษา และนักวิจัย
 
-# Who is this course for?
+## เทคโนโลยีที่ใช้
 
-- Python Beginners
-- Data Analysts
-- Data Engineers
-- Machine Learning Beginners
-- IoT Developers
-- Embedded Engineers
-- Students
-- Researchers
+Python 3, Matplotlib, NumPy, Pandas, Seaborn, Jupyter Notebook, VS Code และ WSL Ubuntu
 
----
+## แผนการเรียน
 
-# Technologies
+| ตอน | หัวข้อ | เอกสาร |
+|:---:|--------|:------:|
+| EP1 | รู้จัก Matplotlib และสร้างกราฟเส้นแรก | 📖 [README](./ep01-introduction-to-matplotlib/README.md) |
+| EP2 | กราฟกระจายแบบพื้นฐาน | 📖 [README](./ep02-simple-scatter-plots/README.md) |
+| EP3 | การแสดงค่าความคลาดเคลื่อน | 📖 [README](./ep03-visualizing-errors/README.md) |
+| EP4 | กราฟความหนาแน่นและกราฟเส้นชั้นความสูง | วางแผนไว้ |
+| EP5 | ฮิสโตแกรม การแบ่งช่วง และความหนาแน่น | วางแผนไว้ |
+| EP6 | การปรับแต่งคำอธิบายกราฟ | วางแผนไว้ |
+| EP7 | การปรับแต่งแถบสี | วางแผนไว้ |
+| EP8 | การสร้างกราฟย่อยหลายกราฟ | วางแผนไว้ |
+| EP9 | ข้อความและคำอธิบายประกอบ | วางแผนไว้ |
+| EP10 | การปรับแต่งขีดบอกตำแหน่งบนแกน | วางแผนไว้ |
+| EP11 | การกำหนดค่าและรูปแบบของ Matplotlib | วางแผนไว้ |
+| EP12 | การสร้างกราฟสามมิติ | วางแผนไว้ |
+| EP13 | การสร้างภาพข้อมูลภูมิศาสตร์ | วางแผนไว้ |
+| EP14 | การสร้างภาพข้อมูลด้วย Seaborn | วางแผนไว้ |
+| EP15 | มินิโปรเจกต์การสร้างภาพข้อมูล | วางแผนไว้ |
 
-- Python 3
-- Matplotlib
-- NumPy
-- Pandas
-- Seaborn
-- Jupyter Notebook
-- VS Code
-- WSL Ubuntu
+> ขณะนี้ Repository มีเนื้อหาถึง EP3 ส่วน EP4–EP15 เป็นหัวข้อที่วางแผนไว้
 
----
+## โครงสร้าง Repository
 
-# Course Roadmap
-
-| EP | Topic | GitHub |
-|:--:|-------|:------:|
-| EP1 | Introduction to Matplotlib & Your First Line Plot | 📖 [README](./ep01-introduction-to-matplotlib/README.md) |
-| EP2 | Simple Scatter Plots | 📖 [README](./ep02-simple-scatter-plots/README.md) |
-| EP3 | Visualizing Errors | 📖 [README](./ep03-visualizing-errors/README.md) |
-| EP4 | Density and Contour Plots | 📖 [README](./ep04-density-and-contour-plots/README.md) |
-| EP5 | Histograms, Binning & Density | 📖 [README](./ep05-histograms-binning-density/README.md) |
-| EP6 | Customizing Plot Legends | 📖 [README](./ep06-customizing-legends/README.md) |
-| EP7 | Customizing Colorbars | 📖 [README](./ep07-customizing-colorbars/README.md) |
-| EP8 | Multiple Subplots | 📖 [README](./ep08-multiple-subplots/README.md) |
-| EP9 | Text and Annotation | 📖 [README](./ep09-text-and-annotation/README.md) |
-| EP10 | Customizing Ticks | 📖 [README](./ep10-customizing-ticks/README.md) |
-| EP11 | Matplotlib Configurations & Styles | 📖 [README](./ep11-configurations-and-styles/README.md) |
-| EP12 | 3D Plotting with Matplotlib | 📖 [README](./ep12-3d-plotting/README.md) |
-| EP13 | Geographic Data Visualization | 📖 [README](./ep13-geographic-data/README.md) |
-| EP14 | Data Visualization with Seaborn | 📖 [README](./ep14-seaborn/README.md) |
-| EP15 | Visualization Mini Project | 📖 [README](./ep15-mini-project/README.md) |
-
----
-
-# Repository Structure
-
-```text
+~~~text
 visualization-with-matplotlib/
-│
 ├── README.md
-│
 ├── ep01-introduction-to-matplotlib/
 │   ├── README.md
-│   ├── notebooks/
 │   ├── source-code/
-│   ├── images/
 │   └── exercises/
-│
 ├── ep02-simple-scatter-plots/
-│
-├── ep03-visualizing-errors/
-│
-├── ...
-│
-└── ep15-mini-project/
-```
+└── ep03-visualizing-errors/
+~~~
 
----
+## ลำดับการเรียนรู้
 
-# Learning Path
+~~~text
+พื้นฐาน Python → NumPy → พื้นฐาน Matplotlib
+→ การสร้างภาพข้อมูลระดับกลางและระดับสูง
+→ Seaborn → มินิโปรเจกต์
+~~~
 
-This course follows a progressive learning path.
+## 🎬 เพลย์ลิสต์ YouTube
 
-```
-Python Basics
-      │
-      ▼
-NumPy
-      │
-      ▼
-Matplotlib Fundamentals
-      │
-      ▼
-Intermediate Visualization
-      │
-      ▼
-Advanced Visualization
-      │
-      ▼
-Seaborn
-      │
-      ▼
-Mini Project
-```
+[การสร้างภาพข้อมูลด้วย Python และ Matplotlib](https://www.youtube.com/playlist?list=PLea-bfI_jPIA)
 
----
+แต่ละบทใน GitHub ตรงกับวิดีโอหนึ่งตอนบน YouTube
 
-# 🎬 YouTube Playlist
+## ⭐ ทักษะที่จะได้รับ
 
-> [**Python Data Visualization with Matplotlib**](https://www.youtube.com/playlist?list=PLea-bfI_jPIA)
+- การเขียนโปรแกรมด้วย Python และการทำงานร่วมกับ NumPy
+- การสร้างกราฟเชิงวิทยาศาสตร์และการสำรวจข้อมูล
+- พื้นฐาน Seaborn และการปรับแต่งกราฟ
+- การสร้างกราฟสำหรับ Dashboard
+- การเล่าเรื่องด้วยข้อมูล
 
-Each GitHub chapter corresponds to one YouTube episode.
+## 📜 สัญญาอนุญาต
 
----
-
-# ⭐ Skills You'll Gain
-
-- Python Programming
-- Data Visualization
-- Scientific Plotting
-- Data Exploration
-- NumPy Integration
-- Seaborn Basics
-- Plot Customization
-- Dashboard-ready Charts
-- Data Storytelling
-
----
-
-# 📜 License
-
-This repository is created for educational purposes.
-
-All examples, exercises, figures, and explanations are original works developed for this course.
+Repository นี้จัดทำขึ้นเพื่อวัตถุประสงค์ทางการศึกษา ตัวอย่าง แบบฝึกหัด รูปภาพ และคำอธิบายทั้งหมดเป็นผลงานต้นฉบับที่พัฒนาขึ้นสำหรับหลักสูตรนี้

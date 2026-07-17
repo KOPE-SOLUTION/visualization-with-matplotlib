@@ -1,3 +1,3 @@
-# Exercise
+# แบบฝึกหัด
 
-Practice customizing error bars and confidence bands.
+ฝึกปรับแต่งแถบค่าคลาดเคลื่อนและแถบช่วงความเชื่อมั่น

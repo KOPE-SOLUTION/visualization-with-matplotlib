@@ -1,3 +1,3 @@
-# Exercise
+# แบบฝึกหัด
 
-Create your own scatter plot and customize markers, colors, and sizes.
+สร้างกราฟกระจายของคุณเอง แล้วปรับแต่งรูปแบบ สี และขนาดของจุดข้อมูล
