@@ -12,14 +12,14 @@ motor_temperature = (
 
 fig, axes = plt.subplots(1, 2, figsize=(13, 5))
 
-histogram = axes[0].hist2d(
+counts_2d, x_edges, y_edges, image = axes[0].hist2d(
     motor_current,
     motor_temperature,
     bins=35,
     cmap="YlOrRd",
     cmin=1,
 )
-fig.colorbar(histogram[3], ax=axes[0], label="Readings per bin")
+fig.colorbar(image, ax=axes[0], label="Readings per bin")
 axes[0].set(
     title="Two-dimensional histogram",
     xlabel="Motor current (A)",

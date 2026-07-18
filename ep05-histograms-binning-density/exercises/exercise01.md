@@ -19,7 +19,11 @@
 - Legend
 - เส้น threshold ที่กำหนดโดยผู้ดูแลระบบ
 
-## ส่วนที่ 3: ข้อมูลสองมิติ
+## ส่วนที่ 3: Edge Gateway Summary
+
+สร้าง Histogram Summary ที่ใช้ Fixed Bin Edges และมี Device ID, ช่วงเวลา, หน่วย, Sampling Rate, Bin configuration version, Bin edges และ Counts จากนั้นอธิบายว่าทำไม Summary จากคนละ Bin configuration จึงนำมารวมกันไม่ได้
+
+## ส่วนที่ 4: ข้อมูลสองมิติ
 
 เลือกหนึ่งคู่ตัวแปร:
 
@@ -30,7 +34,7 @@
 
 สร้างทั้ง 2D histogram และ hexbin จากข้อมูลเดียวกัน แล้วเปรียบเทียบว่ากราฟใดอ่าน operating region ได้ชัดกว่า
 
-## ส่วนที่ 4: KDE
+## ส่วนที่ 5: KDE
 
 สร้าง histogram พร้อม KDE จากข้อมูลเซนเซอร์หนึ่งตัวแปร แล้วทดลองปรับ bandwidth ให้เส้น:
 
