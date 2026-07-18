@@ -211,6 +211,88 @@ Probability ใน Bin = Density × ความกว้าง Bin
 
 ดังนั้น Density ไม่ใช่ Count, ไม่ใช่เปอร์เซ็นต์ และความสูงของแท่งเพียงอย่างเดียวไม่ใช่ Probability
 
+### `bins=30` หมายถึงอะไร
+
+`bins=30` หมายถึงให้แบ่งช่วงตั้งแต่ค่าต่ำสุดถึงค่าสูงสุดของข้อมูลออกเป็น 30 Bin ไม่ได้หมายความว่า Bin มีความกว้าง 30 หน่วย
+
+เมื่อไม่ได้กำหนด `range` หรือขอบ Bin เอง และทุก Bin กว้างเท่ากัน:
+
+~~~text
+ความกว้าง Bin ≈ (ค่าสูงสุด − ค่าต่ำสุด) ÷ จำนวน Bin
+~~~
+
+สำหรับข้อมูลอุณหภูมิตัวอย่าง:
+
+~~~text
+ค่าต่ำสุด ≈ 21.99 °C
+ค่าสูงสุด ≈ 33.27 °C
+จำนวน Bin = 30
+
+ความกว้าง Bin ≈ (33.27 − 21.99) ÷ 30
+                 ≈ 0.376 °C
+~~~
+
+NumPy สร้างขอบทั้งหมด 31 ค่าเพื่อประกอบเป็น 30 ช่วง
+
+### ตัวอย่างแทนค่า Density จาก Bin จริง
+
+โค้ดต่อไปเลือก Bin ที่มี Count สูงที่สุด:
+
+~~~python
+example_counts, example_edges = np.histogram(
+    temperature,
+    bins=30,
+)
+
+peak_bin_index = np.argmax(example_counts)
+
+example_count = example_counts[peak_bin_index]
+example_left = example_edges[peak_bin_index]
+example_right = example_edges[peak_bin_index + 1]
+example_width = example_right - example_left
+
+example_density = example_count / (
+    temperature.size * example_width
+)
+example_probability = example_density * example_width
+
+print(
+    f"Bin range: {example_left:.3f} "
+    f"to {example_right:.3f} °C"
+)
+print(f"Count: {example_count}")
+print(f"Bin width: {example_width:.3f} °C")
+print(f"Density: {example_density:.3f} per °C")
+print(
+    f"Probability: "
+    f"{example_probability:.3f} "
+    f"({example_probability * 100:.1f}%)"
+)
+~~~
+
+จากข้อมูลที่ใช้ seed 42 จะได้ค่าประมาณ:
+
+~~~text
+Bin range: 26.124 to 26.501 °C
+Count: 268
+Bin width: 0.376 °C
+Density: 0.356 per °C
+Probability: 0.134 หรือ 13.4%
+~~~
+
+แทนค่าในสูตร:
+
+~~~text
+Density = 268 ÷ (2,000 × 0.376)
+        ≈ 0.356 ต่อ °C
+
+Probability = 0.356 × 0.376
+            ≈ 0.134
+            ≈ 13.4%
+~~~
+
+หากกำหนดขอบ Bin เอง เช่น `bins=[20, 22, 25, 30, 36]` แต่ละ Bin อาจกว้างไม่เท่ากัน จึงต้องคำนวณความกว้างจากขอบขวาลบขอบซ้ายของแต่ละ Bin
+
 ตัวอย่าง หาก Density ของช่วงกว้าง 2 °C เท่ากับ 0.15 ต่อ °C:
 
 ~~~text
