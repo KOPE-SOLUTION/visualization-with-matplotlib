@@ -880,4 +880,4 @@ Histogram และ Percentile ช่วยสรุปพฤติกรรม 
 
 ## ตอนถัดไป
 
-**EP6 — Customizing Plot Legends**
+**EP6 — [Customizing Plot Legends for Smart Farm Data](../ep06-customizing-plot-legends/README.md)**
