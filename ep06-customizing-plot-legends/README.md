@@ -842,4 +842,4 @@ plt.show()
 
 ## ตอนถัดไป
 
-**EP7 — Customizing Colorbars**
+**EP7 — [Customizing Colorbars for Smart Building IoT Data](../ep07-customizing-colorbars/README.md)**
