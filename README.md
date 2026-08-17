@@ -27,7 +27,7 @@ Python 3, Matplotlib, NumPy, Pandas, Seaborn, Jupyter Notebook และโป�
 | EP5 | Histograms, Binning, and Density for IoT Sensor Data | 📖 [README](./ep05-histograms-binning-density/README.md) |
 | EP6 | Customizing Plot Legends for Smart Farm Data | 📖 [README](./ep06-customizing-plot-legends/README.md) |
 | EP7 | Customizing Colorbars for Smart Building IoT Data | 📖 [README](./ep07-customizing-colorbars/README.md) |
-| EP8 | Multiple Subplots | วางแผนไว้ |
+| EP8 | Multiple Subplots for Manufacturing Production Monitoring | 📖 [README](./ep08-multiple-subplots/README.md) |
 | EP9 | Text and Annotation | วางแผนไว้ |
 | EP10 | Customizing Ticks | วางแผนไว้ |
 | EP11 | Matplotlib Configurations and Styles | วางแผนไว้ |
@@ -36,7 +36,7 @@ Python 3, Matplotlib, NumPy, Pandas, Seaborn, Jupyter Notebook และโป�
 | EP14 | Data Visualization with Seaborn | วางแผนไว้ |
 | EP15 | Visualization Mini Project | วางแผนไว้ |
 
-> ขณะนี้ Repository มีเนื้อหาถึง EP7 ส่วน EP8–EP15 เป็นหัวข้อที่วางแผนไว้
+> ขณะนี้ Repository มีเนื้อหาถึง EP8 ส่วน EP9–EP15 เป็นหัวข้อที่วางแผนไว้
 
 ## โครงสร้าง Repository
 
@@ -52,7 +52,8 @@ visualization-with-matplotlib/
 ├── ep04-density-and-contour-plots/
 ├── ep05-histograms-binning-density/
 ├── ep06-customizing-plot-legends/
-└── ep07-customizing-colorbars/
+├── ep07-customizing-colorbars/
+└── ep08-multiple-subplots/
 ~~~
 
 ## ลำดับการเรียนรู้

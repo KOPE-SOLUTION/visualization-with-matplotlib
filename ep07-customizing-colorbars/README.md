@@ -940,4 +940,4 @@ Colorbar แสดงการจับคู่สี ไม่ได้กำ�
 
 ## ตอนถัดไป
 
-**EP8 — Multiple Subplots**
+**EP8 — [Multiple Subplots for Manufacturing Production Monitoring](../ep08-multiple-subplots/README.md)**
