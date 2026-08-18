@@ -91,7 +91,7 @@
 
 1. เพราะเหตุใดค่าต่ำจึงดูคล้ายกันเมื่อใช้ Linear Scale
 2. เพราะเหตุใด `LogNorm` จึงใช้กับศูนย์ไม่ได้
-3. ผู้อ่านกราฟจะทราบได้อย่างไรว่า Colorbar ใช้ Log Scale
+3. กราฟควรมีสิ่งใดเพื่อบอกว่า Colorbar ใช้ Log Scale
 
 ## โจทย์ท้าทาย: Smart Building Air Quality Dashboard
 

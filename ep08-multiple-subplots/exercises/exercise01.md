@@ -71,7 +71,7 @@
 
 สร้าง GridSpec ขนาด 2×3 โดยกำหนดให้:
 
-- Output Rate กินสองคอลัมน์ด้านบน
+- Output Rate ครอบคลุมสองคอลัมน์ด้านบน
 - Summary อยู่ขวาบน
 - Temperature, Vibration และ Defect Rate อยู่แถวล่าง
 
@@ -90,7 +90,7 @@ temperature vibration quality
 
 - เรียก Axes ผ่าน Dictionary ด้วยชื่อ
 - `output` ต้องมีเส้นของสาม Production Line
-- `quality` ต้องกินสองแถว
+- `quality` ต้องครอบคลุมสองแถว
 - ทุก Axes ต้องมีหน่วย
 
 เปรียบเทียบความอ่านง่ายของโค้ด Mosaic กับ GridSpec
