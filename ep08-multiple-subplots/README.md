@@ -593,6 +593,10 @@ fig.subplots_adjust(
 - `width` ความกว้างของ Axes
 - `height` ความสูงของ Axes
 
+![แผนภาพอธิบาย left, bottom, width และ height ของ fig.add_axes()](./add-axes-coordinate-guide.svg)
+
+ภาพนี้ใช้ `fig.add_axes([0.20, 0.18, 0.58, 0.58])` เป็นตัวอย่าง ให้จำว่า `left` และ `bottom` กำหนด **จุดเริ่มต้น** ของ Axes ส่วน `width` และ `height` กำหนด **ขนาด** ของ Axes โดยวัดเทียบกับ Figure ทั้งภาพ
+
 ### เซลล์ที่ 10 — สร้างกราฟหลักและกราฟย่อย
 
 ~~~python
