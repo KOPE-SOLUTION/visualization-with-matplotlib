@@ -1039,4 +1039,4 @@ Axes ที่วางด้วยพิกัดตรงต้องตรว
 
 ## ตอนถัดไป
 
-**EP9 — Text and Annotation**
+**EP9 — [Text and Annotation for Solar Power Plant Operations](../ep09-text-and-annotation/README.md)**

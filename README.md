@@ -28,7 +28,7 @@ Python 3, Matplotlib, NumPy, Pandas, Seaborn, Jupyter Notebook และโป�
 | EP6 | Customizing Plot Legends for Smart Farm Data | 📖 [README](./ep06-customizing-plot-legends/README.md) |
 | EP7 | Customizing Colorbars for Smart Building IoT Data | 📖 [README](./ep07-customizing-colorbars/README.md) |
 | EP8 | Multiple Subplots for Manufacturing Production Monitoring | 📖 [README](./ep08-multiple-subplots/README.md) |
-| EP9 | Text and Annotation | วางแผนไว้ |
+| EP9 | Text and Annotation for Solar Power Plant Operations | 📖 [README](./ep09-text-and-annotation/README.md) |
 | EP10 | Customizing Ticks | วางแผนไว้ |
 | EP11 | Matplotlib Configurations and Styles | วางแผนไว้ |
 | EP12 | Three-Dimensional Plotting with Matplotlib | วางแผนไว้ |
@@ -36,7 +36,7 @@ Python 3, Matplotlib, NumPy, Pandas, Seaborn, Jupyter Notebook และโป�
 | EP14 | Data Visualization with Seaborn | วางแผนไว้ |
 | EP15 | Visualization Mini Project | วางแผนไว้ |
 
-> ขณะนี้ Repository มีเนื้อหาถึง EP8 ส่วน EP9–EP15 เป็นหัวข้อที่วางแผนไว้
+> ขณะนี้ Repository มีเนื้อหาถึง EP9 ส่วน EP10–EP15 เป็นหัวข้อที่วางแผนไว้
 
 ## โครงสร้าง Repository
 
@@ -53,7 +53,8 @@ visualization-with-matplotlib/
 ├── ep05-histograms-binning-density/
 ├── ep06-customizing-plot-legends/
 ├── ep07-customizing-colorbars/
-└── ep08-multiple-subplots/
+├── ep08-multiple-subplots/
+└── ep09-text-and-annotation/
 ~~~
 
 ## ลำดับการเรียนรู้
