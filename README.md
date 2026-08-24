@@ -1,85 +1,117 @@
 # Visualization with Matplotlib
 
-เรียนรู้การสร้างภาพข้อมูลด้วย **Matplotlib** หนึ่งในไลบรารีสร้างกราฟที่ได้รับความนิยมมากที่สุดใน Python
+หลักสูตรภาษาไทยสำหรับเรียนรู้การสร้างภาพข้อมูลด้วย Python, NumPy และ Matplotlib ตั้งแต่กราฟพื้นฐานไปจนถึงการออกแบบ Figure สำหรับการวิเคราะห์และการสื่อสารข้อมูล
 
-Repository นี้ใช้ประกอบชุดวิดีโอบน YouTube สำหรับผู้เริ่มต้น วิศวกร นักวิเคราะห์ข้อมูล และผู้ที่สนใจด้านวิทยาการข้อมูล คุณจะได้เรียนรู้วิธีเปลี่ยนข้อมูลดิบให้เป็นภาพข้อมูลที่สื่อความหมาย ผ่านตัวอย่างที่นำไปใช้ได้จริงและขั้นตอนการทำงานด้วย Python โดยสามารถเรียนและทดลองได้บน Windows, macOS และ Linux
+เนื้อหาใน Repository นี้ใช้ประกอบวิดีโอบน YouTube แต่ละตอนมีบทอธิบาย ตัวอย่างโค้ด และกรณีศึกษาจากงานหลายสาขา เช่น IoT อาคารอัจฉริยะ การผลิต พลังงานแสงอาทิตย์ และระบบ Cold Chain
 
-## หลักสูตรนี้เหมาะกับใคร
+[ดูเพลย์ลิสต์ Visualization with Matplotlib บน YouTube](https://www.youtube.com/playlist?list=PLea-bfI_jPIA)
 
-- ผู้เริ่มต้นเขียน Python
+## เกี่ยวกับหลักสูตร
+
+หลักสูตรออกแบบให้เรียนตามลำดับได้โดยไม่จำเป็นต้องมีพื้นฐานด้าน Data Visualization มาก่อน เนื้อหาเน้นการทำความเข้าใจว่า Matplotlib สร้างกราฟอย่างไร ควบคู่กับการทดลองปรับโค้ดและอ่านผลลัพธ์ด้วยตนเอง
+
+เหมาะสำหรับ:
+
+- ผู้ที่มีพื้นฐาน Python และต้องการเริ่มสร้างกราฟ
+- นักเรียน นักศึกษา และผู้เริ่มต้นด้าน Data Science
 - นักวิเคราะห์ข้อมูลและวิศวกรข้อมูล
-- ผู้เริ่มต้นด้าน Machine Learning
-- นักพัฒนา IoT และวิศวกรระบบสมองกลฝังตัว
-- นักเรียน นักศึกษา และนักวิจัย
+- นักพัฒนา IoT และระบบสมองกลฝังตัว
+- วิศวกรที่ต้องจัดทำกราฟ รายงาน หรือ Dashboard จากข้อมูลหน้างาน
 
-## เทคโนโลยีที่ใช้
+## เนื้อหาที่เผยแพร่แล้ว
 
-Python 3, Matplotlib, NumPy, Pandas, Seaborn, Jupyter Notebook และโปรแกรมเขียนโค้ดที่คุณถนัด เช่น VS Code
+| ตอน | บทเรียน | กรณีศึกษาและทักษะหลัก |
+|:---:|---|---|
+| EP1 | [Introduction to Matplotlib and Your First Line Plot](./ep01-introduction-to-matplotlib/README.md) | โครงสร้าง Figure, Axes และกราฟเส้นแรก |
+| EP2 | [Simple Scatter Plots](./ep02-simple-scatter-plots/README.md) | ความสัมพันธ์ของข้อมูลด้วยกราฟกระจาย |
+| EP3 | [Visualizing Errors](./ep03-visualizing-errors/README.md) | การแสดงความไม่แน่นอนและ Error Bar |
+| EP4 | [Density and Contour Plots for IoT Sensor Data](./ep04-density-and-contour-plots/README.md) | Contour Plot และข้อมูลเซนเซอร์ IoT |
+| EP5 | [Histograms, Binning, and Density for IoT Sensor Data](./ep05-histograms-binning-density/README.md) | Histogram, Bin และการกระจายของข้อมูล |
+| EP6 | [Customizing Plot Legends for Smart Farm Data](./ep06-customizing-plot-legends/README.md) | การออกแบบ Legend สำหรับข้อมูล Smart Farm |
+| EP7 | [Customizing Colorbars for Smart Building IoT Data](./ep07-customizing-colorbars/README.md) | Colormap, Normalization และ Colorbar |
+| EP8 | [Multiple Subplots for Manufacturing Production Monitoring](./ep08-multiple-subplots/README.md) | Subplots, GridSpec และ Dashboard การผลิต |
+| EP9 | [Text and Annotation for Solar Power Plant Operations](./ep09-text-and-annotation/README.md) | Text, Annotation และระบบพิกัดของ Matplotlib |
+| EP10 | [Customizing Ticks for Cold-Chain Logistics Monitoring](./ep10-customizing-ticks/README.md) | Major Tick, Minor Tick, Locator และ Formatter |
 
-## แผนการเรียน
+## หัวข้อที่วางแผนไว้
 
-| ตอน | หัวข้อ | เอกสาร |
-|:---:|--------|:------:|
-| EP1 | Introduction to Matplotlib and Your First Line Plot | 📖 [README](./ep01-introduction-to-matplotlib/README.md) |
-| EP2 | Simple Scatter Plots | 📖 [README](./ep02-simple-scatter-plots/README.md) |
-| EP3 | Visualizing Errors | 📖 [README](./ep03-visualizing-errors/README.md) |
-| EP4 | Density and Contour Plots for IoT Sensor Data | 📖 [README](./ep04-density-and-contour-plots/README.md) |
-| EP5 | Histograms, Binning, and Density for IoT Sensor Data | 📖 [README](./ep05-histograms-binning-density/README.md) |
-| EP6 | Customizing Plot Legends for Smart Farm Data | 📖 [README](./ep06-customizing-plot-legends/README.md) |
-| EP7 | Customizing Colorbars for Smart Building IoT Data | 📖 [README](./ep07-customizing-colorbars/README.md) |
-| EP8 | Multiple Subplots for Manufacturing Production Monitoring | 📖 [README](./ep08-multiple-subplots/README.md) |
-| EP9 | Text and Annotation for Solar Power Plant Operations | 📖 [README](./ep09-text-and-annotation/README.md) |
-| EP10 | Customizing Ticks for Cold-Chain Logistics Monitoring | 📖 [README](./ep10-customizing-ticks/README.md) |
-| EP11 | Matplotlib Configurations and Styles | วางแผนไว้ |
-| EP12 | Three-Dimensional Plotting with Matplotlib | วางแผนไว้ |
-| EP13 | Geographic Data Visualization | วางแผนไว้ |
-| EP14 | Data Visualization with Seaborn | วางแผนไว้ |
-| EP15 | Visualization Mini Project | วางแผนไว้ |
+| ตอน | หัวข้อ |
+|:---:|---|
+| EP11 | Matplotlib Configurations and Styles |
+| EP12 | Three-Dimensional Plotting with Matplotlib |
+| EP13 | Geographic Data Visualization |
+| EP14 | Data Visualization with Seaborn |
+| EP15 | Visualization Mini Project |
 
-> ขณะนี้ Repository มีเนื้อหาถึง EP10 ส่วน EP11–EP15 เป็นหัวข้อที่วางแผนไว้
+ปัจจุบันเนื้อหาเผยแพร่ถึง EP10 ส่วนชื่อและลำดับของบทถัดไปอาจปรับเปลี่ยนระหว่างการพัฒนา
+
+## สิ่งที่ต้องเตรียม
+
+- Python 3
+- NumPy
+- Matplotlib
+- โปรแกรมเขียนโค้ดหรือ Notebook ที่ถนัด เช่น VS Code หรือ Jupyter Notebook
+
+ติดตั้งไลบรารีหลักด้วยคำสั่ง:
+
+~~~bash
+python -m pip install numpy matplotlib
+~~~
+
+บางบทอาจใช้ Pandas, Seaborn หรือไลบรารีเสริม โดยจะระบุไว้ใน README ของบทนั้น
+
+## วิธีเรียนจาก Repository นี้
+
+1. เลือกบทจากตารางเนื้อหาที่เผยแพร่แล้ว
+2. อ่าน README ของบทเพื่อทำความเข้าใจแนวคิดและลำดับการทดลอง
+3. เปิดไฟล์ในโฟลเดอร์ `source-code` แล้วรันทีละตัวอย่าง
+4. เปลี่ยนค่า Parameter และเปรียบเทียบผลลัพธ์ด้วยตนเอง
+5. ทำโจทย์ในโฟลเดอร์ `exercises` หากบทนั้นมีแบบฝึกหัด
+
+แนะนำให้เรียนตามลำดับตั้งแต่ EP1 เพราะเนื้อหาในตอนหลังจะนำแนวคิดเรื่อง Figure, Axes, NumPy Array และ Object-oriented API จากตอนก่อนหน้ามาใช้ต่อ
 
 ## โครงสร้าง Repository
 
 ~~~text
 visualization-with-matplotlib/
 ├── README.md
+├── assets/
+│   └── thumbnails/
 ├── ep01-introduction-to-matplotlib/
-│   ├── README.md
-│   ├── source-code/
-│   └── exercises/
 ├── ep02-simple-scatter-plots/
-├── ep03-visualizing-errors/
-├── ep04-density-and-contour-plots/
-├── ep05-histograms-binning-density/
-├── ep06-customizing-plot-legends/
-├── ep07-customizing-colorbars/
-├── ep08-multiple-subplots/
-├── ep09-text-and-annotation/
+├── ...
 └── ep10-customizing-ticks/
 ~~~
 
-## ลำดับการเรียนรู้
+โครงสร้างภายในแต่ละบทโดยทั่วไปเป็นดังนี้:
 
 ~~~text
-พื้นฐาน Python → NumPy → พื้นฐาน Matplotlib
-→ การสร้างภาพข้อมูลระดับกลางและระดับสูง
-→ Seaborn → มินิโปรเจกต์
+epXX-topic/
+├── README.md
+├── source-code/
+└── exercises/       # มีในบทที่จัดเตรียมแบบฝึกหัดไว้
 ~~~
 
-## 🎬 เพลย์ลิสต์ YouTube
+- `README.md` อธิบายแนวคิดและลำดับการทดลอง
+- `source-code` เก็บสคริปต์หรือ Notebook ที่ใช้ในบทเรียน
+- `exercises` เก็บโจทย์สำหรับฝึกเพิ่มเติม
+- `assets` เก็บภาพประกอบหรือไฟล์ที่ใช้ร่วมกับเอกสาร
 
-[การสร้างภาพข้อมูลด้วย Python และ Matplotlib](https://www.youtube.com/playlist?list=PLea-bfI_jPIA)
+## ผลลัพธ์การเรียนรู้
 
-แต่ละบทใน GitHub ตรงกับวิดีโอหนึ่งตอนบน YouTube
+เมื่อเรียนตามลำดับ ผู้เรียนจะสามารถ:
 
-## ⭐ ทักษะที่จะได้รับ
+- สร้างและปรับแต่งกราฟด้วย Matplotlib Object-oriented API
+- ใช้ NumPy เตรียมข้อมูลสำหรับการสร้างภาพ
+- เลือกชนิดกราฟให้เหมาะกับคำถามและลักษณะข้อมูล
+- ออกแบบ Label, Legend, Colorbar, Tick และ Annotation ให้อ่านง่าย
+- จัดวางหลาย Axes ภายใน Figure เดียว
+- สร้างกราฟสำหรับการสำรวจข้อมูล รายงาน และ Dashboard
 
-- การเขียนโปรแกรมด้วย Python และการทำงานร่วมกับ NumPy
-- การสร้างกราฟเชิงวิทยาศาสตร์และการสำรวจข้อมูล
-- พื้นฐาน Seaborn และการปรับแต่งกราฟ
-- การสร้างกราฟสำหรับ Dashboard
-- การเล่าเรื่องด้วยข้อมูล
+## หมายเหตุเกี่ยวกับข้อมูลตัวอย่าง
 
-## 📜 สัญญาอนุญาต
+ข้อมูลและเหตุการณ์จำลองในหลักสูตรสร้างขึ้นเพื่อการเรียนรู้ ไม่ใช่ข้อมูลจากสถานประกอบการจริง และไม่ควรนำค่าจากตัวอย่างไปใช้เป็นเกณฑ์ตัดสินใจด้านวิศวกรรม ความปลอดภัย หรือการควบคุมกระบวนการ
 
-Repository นี้จัดทำขึ้นเพื่อวัตถุประสงค์ทางการศึกษา ตัวอย่าง แบบฝึกหัด รูปภาพ และคำอธิบายทั้งหมดเป็นผลงานต้นฉบับที่พัฒนาขึ้นสำหรับหลักสูตรนี้
+## การใช้งานเนื้อหา
+
+Repository นี้จัดทำเพื่อการศึกษา ตัวอย่างโค้ด แบบฝึกหัด รูปภาพ และคำอธิบายได้รับการพัฒนาสำหรับหลักสูตร Visualization with Matplotlib ของ KOPE SOLUTION
