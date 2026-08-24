@@ -220,25 +220,33 @@ event_index = np.abs(
 ax.text(
     hours[event_index],
     ac_power[event_index] + 350,
-    "Data coordinates",
+    "Data coordinates\n(x and y follow the data)",
     color="tab:blue",
 )
 
 ax.text(
     0.02,
     0.95,
-    "Axes coordinates",
+    "Axes coordinates\n(0.02, 0.95)",
     transform=ax.transAxes,
     va="top",
     fontweight="bold",
 )
 
 fig.text(
-    0.99,
-    0.01,
-    "Synthetic training data",
+    0.98,
+    0.03,
+    "Figure coordinates (0.98, 0.03)",
+    transform=fig.transFigure,
     ha="right",
-    color="0.4",
+    va="bottom",
+    color="tab:red",
+    fontweight="bold",
+    bbox=dict(
+        facecolor="white",
+        edgecolor="tab:red",
+        alpha=0.9,
+    ),
 )
 
 ax.set(
@@ -252,7 +260,13 @@ ax.grid(alpha=0.25)
 plt.show()
 ~~~
 
-จุดสำคัญคือ `(0.02, 0.95)` ไม่ใช่เวลาและกำลังผลิต เมื่อใช้ `ax.transAxes` ตัวเลขคู่นี้หมายถึงตำแหน่ง 2% จากซ้าย และ 95% จากล่างของกรอบกราฟ
+จุดสังเกตจากผลลัพธ์:
+
+- `Data coordinates` อยู่ใกล้ข้อมูลเวลา 9 นาฬิกา ตำแหน่งจึงอ้างอิงค่าบนแกน x และ y
+- `Axes coordinates (0.02, 0.95)` อยู่ที่ 2% จากซ้ายและ 95% จากล่างของกรอบกราฟ
+- `Figure coordinates (0.98, 0.03)` อยู่ที่ 98% จากซ้ายและ 3% จากล่างของภาพทั้งใบ
+
+การเขียน `transform=fig.transFigure` ใน `fig.text()` ไม่จำเป็น เพราะ `fig.text()` ใช้พิกัด Figure เป็นค่าเริ่มต้นอยู่แล้ว แต่ตัวอย่างนี้เขียนไว้เพื่อให้เห็นระบบพิกัดอย่างชัดเจน
 
 ---
 

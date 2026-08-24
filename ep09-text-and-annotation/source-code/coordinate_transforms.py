@@ -24,7 +24,7 @@ maintenance_index = nearest_index(hours, 12.2)
 ax.text(
     hours[maintenance_index],
     ac_power[maintenance_index],
-    "  Data position",
+    "  Data coordinates\n  (x and y follow the data)",
     transform=ax.transData,
     color="tab:red",
     va="bottom",
@@ -33,7 +33,7 @@ ax.text(
 ax.text(
     0.02,
     0.95,
-    "Axes position: 2% from left, 95% from bottom",
+    "Axes coordinates\n(0.02, 0.95)",
     transform=ax.transAxes,
     va="top",
     bbox={
@@ -45,13 +45,19 @@ ax.text(
 )
 
 fig.text(
-    0.99,
-    0.01,
-    "Figure position — synthetic training data",
+    0.98,
+    0.03,
+    "Figure coordinates (0.98, 0.03)",
+    transform=fig.transFigure,
     ha="right",
     va="bottom",
-    fontsize=9,
-    color="0.35",
+    color="tab:red",
+    fontweight="bold",
+    bbox={
+        "facecolor": "white",
+        "edgecolor": "tab:red",
+        "alpha": 0.9,
+    },
 )
 
 ax.set(
