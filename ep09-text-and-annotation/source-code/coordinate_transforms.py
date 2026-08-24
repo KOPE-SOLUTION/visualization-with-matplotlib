@@ -21,11 +21,11 @@ ax.plot(
 
 maintenance_index = nearest_index(hours, 12.2)
 
+# ax.text() uses Data Coordinates by default.
 ax.text(
     hours[maintenance_index],
     ac_power[maintenance_index],
     "  Data coordinates\n  (x and y follow the data)",
-    transform=ax.transData,
     color="tab:red",
     va="bottom",
 )
@@ -44,11 +44,11 @@ ax.text(
     },
 )
 
+# fig.text() uses Figure Coordinates by default.
 fig.text(
     0.98,
     0.03,
     "Figure coordinates (0.98, 0.03)",
-    transform=fig.transFigure,
     ha="right",
     va="bottom",
     color="tab:red",
