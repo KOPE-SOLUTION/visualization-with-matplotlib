@@ -571,4 +571,4 @@ ax.text(
 
 ## ตอนถัดไป
 
-**EP10 — Customizing Ticks**
+**EP10 — [Customizing Ticks for Cold-Chain Logistics Monitoring](../ep10-customizing-ticks/README.md)**

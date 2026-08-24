@@ -29,14 +29,14 @@ Python 3, Matplotlib, NumPy, Pandas, Seaborn, Jupyter Notebook และโป�
 | EP7 | Customizing Colorbars for Smart Building IoT Data | 📖 [README](./ep07-customizing-colorbars/README.md) |
 | EP8 | Multiple Subplots for Manufacturing Production Monitoring | 📖 [README](./ep08-multiple-subplots/README.md) |
 | EP9 | Text and Annotation for Solar Power Plant Operations | 📖 [README](./ep09-text-and-annotation/README.md) |
-| EP10 | Customizing Ticks | วางแผนไว้ |
+| EP10 | Customizing Ticks for Cold-Chain Logistics Monitoring | 📖 [README](./ep10-customizing-ticks/README.md) |
 | EP11 | Matplotlib Configurations and Styles | วางแผนไว้ |
 | EP12 | Three-Dimensional Plotting with Matplotlib | วางแผนไว้ |
 | EP13 | Geographic Data Visualization | วางแผนไว้ |
 | EP14 | Data Visualization with Seaborn | วางแผนไว้ |
 | EP15 | Visualization Mini Project | วางแผนไว้ |
 
-> ขณะนี้ Repository มีเนื้อหาถึง EP9 ส่วน EP10–EP15 เป็นหัวข้อที่วางแผนไว้
+> ขณะนี้ Repository มีเนื้อหาถึง EP10 ส่วน EP11–EP15 เป็นหัวข้อที่วางแผนไว้
 
 ## โครงสร้าง Repository
 
@@ -54,7 +54,8 @@ visualization-with-matplotlib/
 ├── ep06-customizing-plot-legends/
 ├── ep07-customizing-colorbars/
 ├── ep08-multiple-subplots/
-└── ep09-text-and-annotation/
+├── ep09-text-and-annotation/
+└── ep10-customizing-ticks/
 ~~~
 
 ## ลำดับการเรียนรู้
