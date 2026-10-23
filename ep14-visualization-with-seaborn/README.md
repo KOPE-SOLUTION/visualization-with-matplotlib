@@ -762,4 +762,4 @@ Matplotlib ยังใช้จัด Figure ปรับชื่อแกน 
 
 ## ตอนถัดไป
 
-**EP15 — Visualization Mini Project** (อยู่ในแผนเนื้อหา)
+**EP15 — [Visualization Mini Project](../ep15-visualization-mini-project/README.md)**

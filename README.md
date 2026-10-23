@@ -36,14 +36,9 @@
 | EP12 | [Three-Dimensional Plotting in Matplotlib](./ep12-three-dimensional-plotting/README.md) | พิกัด X/Y/Z, Wireframe, Surface และ Contour ของกองวัสดุในโรงงานปูนซีเมนต์ |
 | EP13 | [Geographic Data with Basemap](./ep13-geographic-data-with-basemap/README.md) | พิกัดภูมิศาสตร์ แผนที่สถานีโทรคมนาคม และการใช้สีและขนาดแสดงข้อมูล |
 | EP14 | [Visualization with Seaborn](./ep14-visualization-with-seaborn/README.md) | DataFrame, การแบ่งกลุ่ม และกราฟสรุปข้อมูลงานทำความสะอาดห้องพักในโรงแรม |
+| EP15 | [Visualization Mini Project](./ep15-visualization-mini-project/README.md) | ตรวจและสรุปข้อมูลงานศูนย์บริการรถยนต์ พร้อมสร้างรายงานสี่กราฟด้วย Matplotlib และ Seaborn |
 
-## หัวข้อที่วางแผนไว้
-
-| ตอน | หัวข้อ |
-|:---:|---|
-| EP15 | Visualization Mini Project |
-
-ปัจจุบันเนื้อหาเผยแพร่ถึง EP14 ส่วนชื่อและลำดับของบทถัดไปอาจปรับเปลี่ยนระหว่างการพัฒนา
+ปัจจุบันเนื้อหาเผยแพร่ถึง EP15 ซึ่งเป็น Mini Project ที่นำทักษะจากบทก่อนหน้ามาประกอบเป็นรายงาน
 
 ## สิ่งที่ต้องเตรียม
 
@@ -84,7 +79,8 @@ visualization-with-matplotlib/
 ├── ep11-configurations-and-stylesheets/
 ├── ep12-three-dimensional-plotting/
 ├── ep13-geographic-data-with-basemap/
-└── ep14-visualization-with-seaborn/
+├── ep14-visualization-with-seaborn/
+└── ep15-visualization-mini-project/
 ~~~
 
 โครงสร้างภายในแต่ละบทโดยทั่วไปเป็นดังนี้:
