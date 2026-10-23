@@ -4,6 +4,7 @@ import matplotlib.ticker as mticker
 from cold_chain_data import create_cold_chain_day
 
 
+# ส่วนเดิม: เตรียมข้อมูลและวาดกราฟ ไม่ใช่จุดเน้นของตัวอย่างนี้
 data = create_cold_chain_day()
 
 fig, ax = plt.subplots(
@@ -18,6 +19,7 @@ ax.plot(
     linewidth=2,
 )
 
+# จุดเน้น 1: Locator กำหนดตำแหน่งขีดบนแกน X (หน่วยของข้อมูลคือชั่วโมง)
 ax.xaxis.set_major_locator(
     mticker.MultipleLocator(4)
 )
@@ -25,10 +27,11 @@ ax.xaxis.set_minor_locator(
     mticker.MultipleLocator(1)
 )
 
+# จุดเน้น 2: ปรับขนาดขีด ไม่ได้เปลี่ยนระยะห่างระหว่าง Tick
 ax.tick_params(
     axis="x",
     which="major",
-    length=7,
+    length=7,  # ความยาวขีด 7 points ไม่ใช่ 7 ชั่วโมง
     width=1.2,
 )
 ax.tick_params(
@@ -38,6 +41,7 @@ ax.tick_params(
     width=0.8,
 )
 
+# ส่วนเสริม: ใช้เส้นตารางจาง ๆ ช่วยแยกจังหวะหลักกับจังหวะย่อย
 ax.grid(
     axis="x",
     which="major",

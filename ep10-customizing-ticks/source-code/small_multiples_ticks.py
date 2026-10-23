@@ -4,6 +4,7 @@ import matplotlib.ticker as mticker
 from cold_chain_data import create_cold_chain_day
 
 
+# ส่วนเดิมจาก EP8: ข้อมูลหลายชุดและ Layout 2x2 ไม่ต้องอธิบายซ้ำทุกบรรทัด
 data = create_cold_chain_day()
 
 series = [
@@ -41,6 +42,11 @@ fig, axes = plt.subplots(
     layout="constrained",
 )
 
+# จุดเน้น 1: sharex=True ทำให้แกน X ใช้ Locator ร่วมกัน ตั้งผ่านช่องเดียวพอ
+axes[-1, 0].xaxis.set_major_locator(
+    mticker.MaxNLocator(nbins=4, integer=True)
+)
+
 for ax, (values, title, unit, color) in zip(
     axes.flat,
     series,
@@ -51,12 +57,7 @@ for ax, (values, title, unit, color) in zip(
         color=color,
         linewidth=2,
     )
-    ax.xaxis.set_major_locator(
-        mticker.MaxNLocator(
-            nbins=4,
-            integer=True,
-        )
-    )
+    # จุดเน้น 2: จำกัดจำนวนช่วงบนแกน Y; สร้าง Locator ใหม่ให้แต่ละแกน
     ax.yaxis.set_major_locator(
         mticker.MaxNLocator(nbins=4)
     )
