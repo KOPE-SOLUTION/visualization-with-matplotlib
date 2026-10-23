@@ -652,4 +652,4 @@ python -m unittest discover -s ep13-geographic-data-with-basemap/tests -v
 
 ## ตอนถัดไป
 
-**EP14 — Data Visualization with Seaborn** (อยู่ในแผนเนื้อหา)
+**EP14 — [Visualization with Seaborn](../ep14-visualization-with-seaborn/README.md)**

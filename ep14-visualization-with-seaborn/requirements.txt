@@ -1,0 +1,6 @@
+# Seaborn 0.13 API; SciPy is used by the optional KDE example.
+seaborn==0.13.2
+pandas>=2.2,<3
+numpy>=2.0,<2.4
+matplotlib>=3.9,<3.11
+scipy>=1.15,<2
