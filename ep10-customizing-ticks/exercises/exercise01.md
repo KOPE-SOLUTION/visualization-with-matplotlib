@@ -1,8 +1,6 @@
 # แบบฝึกหัด EP10 — Customizing Ticks
 
-แบบฝึกหัดชุดนี้ใช้ข้อมูลจาก [`cold_chain_data.py`](../source-code/cold_chain_data.py) ให้ทดลองทีละข้อและสังเกตผลที่แกนของกราฟ ไม่จำเป็นต้องทำทุกข้อในครั้งเดียว
-
-รอบแรกทำข้อ 1, 2, 5 และ 6–7 ก่อน ส่วนข้อ 3, 4, 8 และ Challenge เป็นการต่อยอด ทุกข้อให้เปลี่ยนครั้งละอย่าง แล้วตอบว่า **ตำแหน่งขีด ข้อความ หรือหน้าตาขีด** เปลี่ยนไปอย่างไร
+แบบฝึกหัดชุดนี้ใช้ข้อมูลจาก [`cold_chain_data.py`](../source-code/cold_chain_data.py) เพื่อเปรียบเทียบผลของการปรับตำแหน่งขีด ข้อความ และรูปลักษณ์ของ Tick
 
 ## เตรียมข้อมูล
 
@@ -21,8 +19,6 @@ temperature = data["cold_room_temperature"]
 
 ## ข้อ 1 — เปลี่ยนระยะของ Major Tick
 
-จุดที่แก้: ตัวเลขใน `MultipleLocator(...)` ไม่ใช่ข้อมูลอุณหภูมิหรือขนาด Figure
-
 วาดอุณหภูมิห้องเย็น แล้วกำหนด Major Tick ทุก 3 ชั่วโมงด้วย `MultipleLocator`
 
 ผลที่ควรสังเกต:
@@ -32,7 +28,7 @@ temperature = data["cold_room_temperature"]
 
 ## ข้อ 2 — เพิ่ม Minor Tick ทุก 30 นาที
 
-จุดที่แก้: ส่ง Locator ให้ `ax.xaxis.set_minor_locator(...)` ไม่ใช่ `set_major_locator(...)`
+ใช้ `ax.xaxis.set_minor_locator(...)` กำหนด Locator ของขีดย่อย
 
 กำหนด Minor Locator ด้วย:
 
@@ -69,7 +65,7 @@ mticker.MultipleLocator(0.5)
 
 ## ข้อ 5 — ลด Tick ในกราฟขนาดเล็ก
 
-จุดที่แก้: `nbins` ของแกน Y เท่านั้น ใช้ข้อมูล ขนาด Figure และช่วงแกนเดิม เพื่อให้เปรียบเทียบได้ตรงกัน
+ปรับ `nbins` ของแกน Y โดยใช้ข้อมูล ขนาด Figure และช่วงแกนเดิม เพื่อให้เปรียบเทียบได้ตรงกัน
 
 สร้าง Subplots ขนาด 2×2 แล้วทดลองค่าต่อไปนี้กับแกน Y:
 
@@ -87,7 +83,7 @@ mticker.MaxNLocator(nbins=8)
 
 ## ข้อ 6 — ซ่อนเฉพาะข้อความ
 
-จุดที่แก้: Formatter ของแกน X เริ่มจากกราฟใหม่ที่มี Major Tick และไม่มี Minor Tick
+เริ่มจากกราฟใหม่ที่มี Major Tick และไม่มี Minor Tick บนแกน X
 
 ใช้ `NullFormatter` กับแกน X และเปิด Grid ไว้ จากนั้นตรวจว่า:
 
@@ -108,8 +104,6 @@ ax.xaxis.set_major_locator(mticker.NullLocator())
 ผลที่ควรเห็น: ตัวเลข ขีดหลัก และ Grid แนวตั้งของขีดหลักหายไป แต่เส้นข้อมูลกับขอบแกนยังอยู่ อธิบายความต่างจากข้อ 6 ด้วยประโยคสั้น ๆ หนึ่งประโยค
 
 ## ข้อ 8 — หมวดหมู่ของคลังสินค้า
-
-จุดที่เน้น: จับคู่ตำแหน่งกับชื่อผ่าน `set_xticks(..., labels=...)` ส่วน `bar()` และความสูงแท่งเป็นโครงเดิม
 
 สร้าง Bar Chart จากข้อมูลต่อไปนี้:
 
@@ -133,8 +127,6 @@ average_temperature = [
 
 ## Challenge — Daily Cold-Chain Report
 
-ข้อนี้รวมสิ่งที่เรียนแล้ว ไม่ได้เพิ่ม API ใหม่ ลองทำเมื่อแยกหน้าที่ Locator กับ Formatter ได้ก่อน
-
 สร้าง Figure สองแถวที่ใช้แกน X ร่วมกัน:
 
 - แถวบนแสดงอุณหภูมิห้องเย็น
@@ -144,7 +136,7 @@ average_temperature = [
 - ใช้ `MaxNLocator(nbins=5)` กับแกน Y เพื่อควบคุมความแน่นของ Tick
 - Major Grid เข้มกว่า Minor Grid
 
-เมื่อเสร็จแล้วเปรียบเทียบกับ [`cold_chain_tick_dashboard.py`](../source-code/cold_chain_tick_dashboard.py) โดยพิจารณาหลักการก่อนเปรียบเทียบรายละเอียดโค้ด
+เปรียบเทียบผลลัพธ์กับตัวอย่างใน [`cold_chain_tick_dashboard.py`](../source-code/cold_chain_tick_dashboard.py)
 
 ## Checklist ก่อนจบแบบฝึกหัด
 

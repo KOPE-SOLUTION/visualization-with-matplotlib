@@ -911,7 +911,7 @@ Colorbar แสดงการจับคู่สี ไม่ได้กำ�
 3. ล็อก Scale ที่ 0–40 µg/m³ แล้วเพิ่มค่าที่สูงกว่า 40
 4. ทดลอง `extend="max"` และกำหนด Over Color
 5. เปลี่ยน Target Temperature จาก 24 เป็น 25 °C แล้วคำนวณ Deviation ใหม่
-6. สร้าง Discrete Colorbar จากช่วงที่กำหนดโดยผู้สอน
+6. สร้าง Discrete Colorbar จากช่วงสถานะจำลองห้าระดับตามแบบฝึกหัดส่วนที่ 6
 7. เพิ่ม Missing Data และอธิบายด้วยสีที่ไม่ซ้ำกับค่าต่ำสุด
 8. เปรียบเทียบ Linear Scale กับ `LogNorm` สำหรับ Particle Count
 

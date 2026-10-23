@@ -1,4 +1,4 @@
-"""Optional recap: combine EP10 tick tools; no new plotting concept."""
+"""Cold-chain dashboard with shared time ticks and independent y-axis locators."""
 
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mticker
@@ -46,7 +46,7 @@ load_ax.set(
     xlim=(0, 24),
 )
 
-# ทบทวน 1: แกน X ใช้ร่วมกัน จึงตั้ง Locator/Formatter ผ่าน load_ax ตัวเดียว
+# แกน X ใช้ร่วมกัน จึงตั้ง Locator/Formatter ผ่าน load_ax ตัวเดียว
 load_ax.xaxis.set_major_locator(
     mticker.MultipleLocator(4)
 )
@@ -57,12 +57,12 @@ load_ax.xaxis.set_major_formatter(
     mticker.FuncFormatter(format_hour)
 )
 
-# ทบทวน 2: แกน Y แยกกัน จึงสร้าง MaxNLocator ให้แต่ละแกน
+# แกน Y แยกกัน จึงสร้าง MaxNLocator ให้แต่ละแกน
 for ax in axes:
     ax.yaxis.set_major_locator(
         mticker.MaxNLocator(nbins=5)
     )
-    # ทบทวน 3: ความยาวขีดเป็น points; ตำแหน่งมาจาก Locator ด้านบน
+    # ความยาวขีดเป็น points; ตำแหน่งมาจาก Locator ด้านบน
     ax.tick_params(
         axis="x",
         which="major",

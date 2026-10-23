@@ -5,7 +5,7 @@ import numpy as np
 
 def create_cold_chain_day(seed=10):
     """Return reproducible sensor data for one synthetic operating day."""
-    # ส่วนเตรียมข้อมูล: รันครั้งเดียวแล้วนำไปใช้ฝึก Tick ไม่ต้องจำสูตรเหล่านี้
+    # สร้างข้อมูลจำลองหนึ่งวันสำหรับตัวอย่างการปรับ Tick
     rng = np.random.default_rng(seed)
 
     hours = np.arange(0, 24.01, 0.25)

@@ -6,11 +6,11 @@ from cold_chain_data import create_cold_chain_day
 
 def format_hour(value, position):
     """Format whole-hour ticks; position is required but unused here."""
-    # จุดเน้น 1: รับค่าตำแหน่ง เช่น 4 แล้วคืนข้อความ "04:00"
+    # รับค่าตำแหน่ง เช่น 4 แล้วคืนข้อความ "04:00"
     return f"{int(round(value)):02d}:00"
 
 
-# ส่วนเดิม: เตรียมข้อมูลและวาดกราฟ
+# เตรียมข้อมูลอุณหภูมิห้องเย็น
 data = create_cold_chain_day()
 
 fig, ax = plt.subplots(
@@ -25,14 +25,14 @@ ax.plot(
     linewidth=2,
 )
 
-# ทบทวน: Locator ยังวางตำแหน่งทุก 4 ชั่วโมงเหมือนตัวอย่างก่อน
+# วางขีดหลักทุก 4 ชั่วโมง และขีดย่อยทุก 1 ชั่วโมง
 ax.xaxis.set_major_locator(
     mticker.MultipleLocator(4)
 )
 ax.xaxis.set_minor_locator(
     mticker.MultipleLocator(1)
 )
-# จุดเน้น 2: ส่งฟังก์ชันให้ Formatter; ไม่ใส่ () หลัง format_hour
+# ส่งตัวฟังก์ชันให้ Formatter เรียกใช้ ไม่ใส่ () หลัง format_hour
 ax.xaxis.set_major_formatter(
     mticker.FuncFormatter(format_hour)
 )
