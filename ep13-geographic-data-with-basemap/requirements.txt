@@ -1,0 +1,4 @@
+# Tested Basemap release; its basic map data is installed as a dependency.
+basemap==2.0.0
+numpy>=2.0,<2.4
+matplotlib>=3.9,<3.11

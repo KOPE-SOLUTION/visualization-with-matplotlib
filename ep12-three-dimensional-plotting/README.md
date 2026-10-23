@@ -798,4 +798,4 @@ python -m unittest discover -s ep12-three-dimensional-plotting/tests -v
 
 ## ตอนถัดไป
 
-**EP13 — Geographic Data Visualization** (อยู่ในแผนเนื้อหา)
+**EP13 — [Geographic Data with Basemap](../ep13-geographic-data-with-basemap/README.md)**
