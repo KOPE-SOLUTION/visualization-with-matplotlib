@@ -1009,5 +1009,5 @@ Locator เลือกตำแหน่ง Tick, Formatter กำหนดข�
 
 ## ตอนถัดไป
 
-**EP11 — Customizing Matplotlib: Configurations and Stylesheets**
+**EP11 — [Customizing Matplotlib: Configurations and Stylesheets](../ep11-configurations-and-stylesheets/README.md)**
 

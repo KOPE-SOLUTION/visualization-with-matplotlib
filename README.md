@@ -2,7 +2,7 @@
 
 หลักสูตรภาษาไทยสำหรับเรียนรู้การสร้างภาพข้อมูลด้วย Python, NumPy และ Matplotlib ตั้งแต่กราฟพื้นฐานไปจนถึงการออกแบบ Figure สำหรับการวิเคราะห์และการสื่อสารข้อมูล
 
-เนื้อหาใน Repository นี้ใช้ประกอบวิดีโอบน YouTube แต่ละตอนมีบทอธิบาย ตัวอย่างโค้ด และกรณีศึกษาจากงานหลายสาขา เช่น IoT อาคารอัจฉริยะ การผลิต พลังงานแสงอาทิตย์ และระบบ Cold Chain
+เนื้อหาใน Repository นี้ใช้ประกอบวิดีโอบน YouTube แต่ละตอนมีบทอธิบาย ตัวอย่างโค้ด และกรณีศึกษาจากงานหลายสาขา เช่น IoT อาคารอัจฉริยะ การผลิต พลังงานแสงอาทิตย์ ระบบ Cold Chain และงานผลิตและจ่ายน้ำประปา
 
 [ดูเพลย์ลิสต์ Visualization with Matplotlib บน YouTube](https://www.youtube.com/playlist?list=PLea-bfI_jPIA)
 
@@ -32,18 +32,18 @@
 | EP8 | [Multiple Subplots for Manufacturing Production Monitoring](./ep08-multiple-subplots/README.md) | Subplots, GridSpec และ Dashboard การผลิต |
 | EP9 | [Text and Annotation for Solar Power Plant Operations](./ep09-text-and-annotation/README.md) | Text, Annotation และระบบพิกัดของ Matplotlib |
 | EP10 | [Customizing Ticks for Cold-Chain Logistics Monitoring](./ep10-customizing-ticks/README.md) | Major Tick, Minor Tick, Locator และ Formatter |
+| EP11 | [Customizing Matplotlib: Configurations and Stylesheets](./ep11-configurations-and-stylesheets/README.md) | rcParams, Context และ Stylesheet สำหรับรายงานโรงผลิตและจ่ายน้ำประปา |
 
 ## หัวข้อที่วางแผนไว้
 
 | ตอน | หัวข้อ |
 |:---:|---|
-| EP11 | Matplotlib Configurations and Styles |
 | EP12 | Three-Dimensional Plotting with Matplotlib |
 | EP13 | Geographic Data Visualization |
 | EP14 | Data Visualization with Seaborn |
 | EP15 | Visualization Mini Project |
 
-ปัจจุบันเนื้อหาเผยแพร่ถึง EP10 ส่วนชื่อและลำดับของบทถัดไปอาจปรับเปลี่ยนระหว่างการพัฒนา
+ปัจจุบันเนื้อหาเผยแพร่ถึง EP11 ส่วนชื่อและลำดับของบทถัดไปอาจปรับเปลี่ยนระหว่างการพัฒนา
 
 ## สิ่งที่ต้องเตรียม
 
@@ -80,7 +80,8 @@ visualization-with-matplotlib/
 ├── ep01-introduction-to-matplotlib/
 ├── ep02-simple-scatter-plots/
 ├── ...
-└── ep10-customizing-ticks/
+├── ep10-customizing-ticks/
+└── ep11-configurations-and-stylesheets/
 ~~~
 
 โครงสร้างภายในแต่ละบทโดยทั่วไปเป็นดังนี้:
