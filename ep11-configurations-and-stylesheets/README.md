@@ -548,4 +548,4 @@ python -m unittest discover -s ep11-configurations-and-stylesheets/tests -v
 
 ## ตอนถัดไป
 
-**EP12 — Three-Dimensional Plotting with Matplotlib**
+**EP12 — [Three-Dimensional Plotting in Matplotlib](../ep12-three-dimensional-plotting/README.md)**

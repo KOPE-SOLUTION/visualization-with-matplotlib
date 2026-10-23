@@ -33,17 +33,17 @@
 | EP9 | [Text and Annotation for Solar Power Plant Operations](./ep09-text-and-annotation/README.md) | Text, Annotation และระบบพิกัดของ Matplotlib |
 | EP10 | [Customizing Ticks for Cold-Chain Logistics Monitoring](./ep10-customizing-ticks/README.md) | Major Tick, Minor Tick, Locator และ Formatter |
 | EP11 | [Customizing Matplotlib: Configurations and Stylesheets](./ep11-configurations-and-stylesheets/README.md) | rcParams, Context และ Stylesheet สำหรับรายงานโรงผลิตและจ่ายน้ำประปา |
+| EP12 | [Three-Dimensional Plotting in Matplotlib](./ep12-three-dimensional-plotting/README.md) | พิกัด X/Y/Z, Wireframe, Surface และ Contour ของกองวัสดุในโรงงานปูนซีเมนต์ |
 
 ## หัวข้อที่วางแผนไว้
 
 | ตอน | หัวข้อ |
 |:---:|---|
-| EP12 | Three-Dimensional Plotting with Matplotlib |
 | EP13 | Geographic Data Visualization |
 | EP14 | Data Visualization with Seaborn |
 | EP15 | Visualization Mini Project |
 
-ปัจจุบันเนื้อหาเผยแพร่ถึง EP11 ส่วนชื่อและลำดับของบทถัดไปอาจปรับเปลี่ยนระหว่างการพัฒนา
+ปัจจุบันเนื้อหาเผยแพร่ถึง EP12 ส่วนชื่อและลำดับของบทถัดไปอาจปรับเปลี่ยนระหว่างการพัฒนา
 
 ## สิ่งที่ต้องเตรียม
 
@@ -81,7 +81,8 @@ visualization-with-matplotlib/
 ├── ep02-simple-scatter-plots/
 ├── ...
 ├── ep10-customizing-ticks/
-└── ep11-configurations-and-stylesheets/
+├── ep11-configurations-and-stylesheets/
+└── ep12-three-dimensional-plotting/
 ~~~
 
 โครงสร้างภายในแต่ละบทโดยทั่วไปเป็นดังนี้:
